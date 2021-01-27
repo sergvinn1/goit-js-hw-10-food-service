@@ -10,22 +10,22 @@ const refs = {
 const savedTheme = localStorage.getItem('theme');
 
 if (savedTheme === JSON.stringify(Theme.DARK)) {
-  refs.body.classList.add(`${Theme.DARK}`);
+  refs.body.classList.add(Theme.DARK);
   refs.toggleTheme.setAttribute('checked', 'true');
 } else {
-  refs.body.classList.add(`${Theme.LIGHT}`);
+  refs.body.classList.add(Theme.LIGHT);
   localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));
 }
 
 function toDarkTheme() {
   refs.toggleTheme.setAttribute('checked', 'true');
-  refs.body.classList.replace(`${Theme.LIGHT}`, `${Theme.DARK}`);
+  refs.body.classList.replace(Theme.LIGHT, Theme.DARK);
   localStorage.setItem('theme', JSON.stringify(Theme.DARK));
 }
 
 function toLigthTheme() {
   refs.toggleTheme.removeAttribute('checked');
-  refs.body.classList.replace(`${Theme.DARK}`, `${Theme.LIGHT}`);
+  refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
   localStorage.setItem('theme', JSON.stringify(Theme.LIGHT));
 }
 
